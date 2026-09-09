@@ -34,7 +34,7 @@ Status Codes(Códigos de resposta)
 
 400 - Erro na requisição;
 
-401 - Acesso não autorizado - Faça login;
+401 - Não autenticado - Faça login;
 
 403 - Você não tem autorização;
 
