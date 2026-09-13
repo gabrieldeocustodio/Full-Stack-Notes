@@ -1,6 +1,3 @@
-Sim, **essa é uma anotação importante**, principalmente porque a diferença entre semântica e aparência vai voltar bastante quando você estudar acessibilidade e HTML semântico.
-
-Eu colocaria em um arquivo como `02-HTML/Texto.md`:
 
 # Negrito, Itálico e Semântica
 
