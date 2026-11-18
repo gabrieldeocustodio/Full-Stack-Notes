@@ -1,55 +1,42 @@
-DNS(Domain Name System) - Encontra endereços IP associados a um domínio - Ele permite usar nomes fáceis de lembrar em vez de decorar endereços IP.
 
-Porque utilizamos o DNS: vamos supor que o google utilize o dns 142.250.78.14;
+# DNS (Domain Name System)
 
-nós teríamos que digitar: https://142.250.78.14;
+## O que é DNS?
 
-por isso usamos: google.com
+DNS é a sigla para **Domain Name System**. É um sistema responsável por traduzir nomes de domínio em endereços IP.
 
+Os computadores utilizam endereços IP para se comunicar, mas nós utilizamos nomes de domínio por serem mais fáceis de memorizar.
 
+**Exemplo:**
+- Domínio: `google.com`
+- Endereço IP: `142.250.78.14` (exemplo)
 
-Como funciona o DNS?
+## Como funciona?
 
+1. O usuário digita `google.com` no navegador.
+2. O navegador procura o endereço IP correspondente.
+3. Se necessário, uma consulta é enviada a um servidor DNS.
+4. O DNS retorna um endereço IP.
+5. O navegador utiliza esse endereço para se conectar ao destino.
 
-Eu digito: GitHub.com
+## Domínio x IP
 
-2. O navegador vai perguntar pro DNS, qual é o IP do GitHub.com?
+| Conceito | Função |
+|---|---|
+| Domínio | Nome utilizado para acessar um site |
+| Endereço IP | Identificador utilizado para localizar dispositivos na rede |
 
-3. O DNS encontra o IP
+## Cache DNS
 
-4. Navegador encontra o servidor
+O cache DNS armazena temporariamente os resultados de consultas anteriores.
 
-5. Começa a comunicação HTTP/HTTPs
+Isso evita que o computador precise consultar um servidor DNS novamente para um endereço que já foi resolvido recentemente.
 
+## Importância do DNS
 
+- Facilita o acesso a sites.
+- Evita que precisemos memorizar endereços IP.
+- Permite localizar serviços na internet.
+- Ajuda a direcionar usuários para os servidores corretos.
 
-Domínio
-
-- O Domínio é o nome que nós usamos: GitHub.com
-
- 
-IP
-
-- Endereço que é usado para localizar o servidor na rede: 192.168.10.1
-
-
-
-Quem guarda todos os domínios?
-
-- Não existe um computador que guarda todos os domínios.
-
-O DNS é um sistema distribuído, formado por muitos servidores.
-
-
-
-Cachê
-
-Vamos supor que eu acesse: GitHub.com
-
-O computador não precisa perguntar ao DNS do zero toda vez que eu for acessar, o resultado pode ficar armazenado temporariamente no cachê.
-
-então:
-
-GitHub.com -> DNS -> IP -> cachê
-
-
+> **Resumo:** o DNS funciona como uma agenda de contatos da internet, relacionando nomes de domínio aos seus respectivos endereços IP.
