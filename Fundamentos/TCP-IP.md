@@ -1,66 +1,95 @@
-TCP/IP - É o conjunto de protocolos usados para permitir a comunicação entre dispositivos em uma rede. - o IP identifica o destino, TCP garante que os dados cheguem corretamente.
 
+# TCP/IP
 
+## O que é TCP/IP?
 
-IP(Internet Protocol) - É como se fosse um endereço, ele é responsável por identificar os dispositivos e encaminhar os dados até o destino.
+TCP/IP é um conjunto de protocolos que permite a comunicação entre dispositivos conectados em uma rede, incluindo a internet.
 
+O nome vem de dois protocolos importantes:
 
-TCP(Transmission Control Protocol) - Ajuda a fazer uma comunicação confiável entre os dispositivos.
+- **IP (Internet Protocol):** responsável pelo endereçamento e encaminhamento dos pacotes.
+- **TCP (Transmission Control Protocol):** responsável por organizar a transmissão e garantir a entrega confiável dos dados enquanto a conexão funciona.
 
-ele ajuda a garantir que:
+## 1. IP (Internet Protocol)
 
-- Que os dados sejam entregues;
-- Que sejam enviados na ordem certa;
-- Dados perdidos possam ser reenviados;
+O IP é responsável por identificar os dispositivos por meio de endereços IP e ajudar a encaminhar os pacotes até o destino.
 
+**Exemplo de endereço IPv4:**
 
-Em resumo:
+```text
+192.168.1.10
+```
 
-IP - Para onde?
-TCP - Chegou tudo certo?
+## 2. TCP (Transmission Control Protocol)
 
+O TCP fornece uma comunicação confiável entre dois dispositivos.
 
-Dados divididos:
+Suas principais funções são:
 
-- Quando enviamos uma grande quantidade de informação, ele pode ser dividido em pequenas partes.
+- Dividir os dados em segmentos.
+- Controlar a ordem dos dados recebidos.
+- Detectar perdas durante a transmissão.
+- Solicitar o reenvio de dados quando necessário.
 
-Exemplo:
+Isso permite que os dados cheguem organizados ao destino, desde que a conexão consiga ser mantida.
 
+## 3. Portas
 
-Informação -> |___|  |___|  |___| -> Internet -> Servidor -> Tudo reorganizado -> Mensagem
+As portas identificam qual serviço ou aplicação deve receber os dados em um dispositivo.
 
-o TCP ajuda a controlar essa transmissão de dados;
+**Exemplo:**
 
+```text
+192.168.1.10:443
+```
 
+Nesse exemplo:
+- `192.168.1.10` é o endereço IP.
+- `443` é a porta utilizada.
 
-Caso uma parte se perca, o TCP percebe que algo esta faltando e solicita o reenvio, por isso o TCP é considerado um protocolo confiável.
+### Portas comuns
 
+| Porta | Protocolo/serviço |
+|---|---|
+| 80 | HTTP |
+| 443 | HTTPS |
+| 22 | SSH |
+| 21 | FTP |
+| 3306 | MySQL |
 
-Portas:
+## 4. Localhost
 
-O IP pode identificar qual dispositivo deve receber os dados, porém o dispositivo pode estar executando vários serviços ao mesmo tempo.
+`localhost` é um nome utilizado para representar o próprio computador.
 
-Ex: 
+É muito utilizado durante o desenvolvimento de aplicações.
 
-|-- Navegador
-|-- Jogo
-|-- Servidor Web
-|-- Outros programas
+**Exemplo:**
 
-As portas ajudam a identificar qual serviço deve receber os dados.
+```text
+http://localhost:3000
+```
 
-Ex: IP:porta - 192.168.10.1:443 - Ele envia os dados para o dispositivo 192.168.10.1, especificamente para a porta 443.
+Nesse endereço:
+- `localhost` representa o próprio computador.
+- `3000` é a porta em que a aplicação está sendo executada.
 
-HTTP - porta padrão 80
-HTTPs - porta padrão 443
+## 5. Como TCP/IP funciona na prática?
 
+Imagine que você acessa um site:
 
+1. O navegador precisa localizar o servidor.
+2. O IP permite identificar o destino da comunicação.
+3. O TCP estabelece e controla a conexão.
+4. Os dados são transmitidos pela rede.
+5. O navegador recebe e interpreta as informações.
 
-Juntando tudo:
+## Resumo
 
-DNS - descobre o IP
-IP - Localiza o dispositivo
-Porta - Encontra o serviço
-TCP - Garante a comunicação
-HTTP/HTTPs - Troca os dados
+| Elemento | Responsabilidade |
+|---|---|
+| IP | Endereçamento e encaminhamento dos pacotes |
+| TCP | Transmissão confiável e organizada |
+| Porta | Identificação do serviço ou aplicação |
+| Localhost | Representa o próprio computador |
 
+> **Resumo:** TCP/IP é a base da comunicação na internet. O IP ajuda a encontrar o destino, enquanto o TCP organiza e controla a entrega dos dados.
