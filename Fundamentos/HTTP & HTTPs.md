@@ -1,77 +1,87 @@
-HTTP(HyperText Transfer Protocol) - Protocolo para acessar uma página na web, são regras que definem como um navegador conversa com um servidor.
 
-Navegador - Chrome - Faz a requisição HTTP
-Servidor - GitHub - Espera receber a requisição
+# HTTP e HTTPS
 
+## 1. HTTP
 
+HTTP significa **Hypertext Transfer Protocol**. É um protocolo utilizado para permitir a comunicação entre clientes e servidores na web.
 
-Porém o HTTP não criptografa os dados, caso vc digite uma senha e usuário, esses dados viajariam em textos claros pela rede, e serial facilmente interceptados, por isso surgiu o HTTPs
+### Como funciona?
 
-HTTP não guarda memória ( se uma pessoa faz requisições, o HTTP não lembra que foram todas do mesmo usuário).
+1. O usuário acessa um site pelo navegador.
+2. O navegador envia uma requisição HTTP ao servidor.
+3. O servidor processa a solicitação.
+4. O servidor retorna uma resposta ao navegador.
 
+### Cliente e servidor
 
+- **Cliente:** geralmente é o navegador, que envia requisições.
+- **Servidor:** recebe as requisições, processa e envia respostas.
 
-Métodos HTTP
+### Características do HTTP
 
-Get - Busca informações;
+- É baseado em requisições e respostas.
+- É um protocolo sem estado (*stateless*): cada requisição é independente por padrão.
+- Utiliza métodos para indicar o tipo de operação desejada.
 
-Post - Envia os dados;
+### Principais métodos HTTP
 
-Put - Atualiza tudo;
+| Método | Função |
+|---|---|
+| GET | Buscar informações |
+| POST | Enviar dados ou criar um recurso |
+| PUT | Substituir um recurso |
+| PATCH | Atualizar parte de um recurso |
+| DELETE | Excluir um recurso |
 
-Patch - Atualiza só uma parte;
+### Códigos de status HTTP
 
-Delete - Deleta;
+| Código | Significado |
+|---|---|
+| 200 | Requisição realizada com sucesso |
+| 201 | Recurso criado |
+| 301 | Redirecionamento permanente |
+| 400 | Requisição inválida |
+| 401 | Não autenticado |
+| 403 | Acesso recusado |
+| 404 | Recurso não encontrado |
+| 500 | Erro interno do servidor |
 
+## 2. HTTPS
 
-Status Codes(Códigos de resposta)
+HTTPS significa **Hypertext Transfer Protocol Secure**. É a versão segura do HTTP.
 
-200 - Indica que deu tudo certo;
+Ele utiliza o protocolo TLS para proteger a comunicação entre cliente e servidor.
 
-201 - Alguma coisa foi criada;
+### Como funciona?
 
-301 - A página mudou de endereço;
+O HTTPS utiliza criptografia para proteger os dados durante a transmissão.
 
-400 - Erro na requisição;
+Antes de iniciar a comunicação protegida, cliente e servidor realizam uma negociação de segurança chamada *TLS Handshake*.
 
-401 - Não autenticado - Faça login;
+Durante esse processo, são estabelecidos os parâmetros necessários para a conexão segura e o servidor apresenta seu certificado digital.
 
-403 - Você não tem autorização;
+### Certificado digital
 
-404 - Página não encontrada;
+O certificado digital ajuda a confirmar a identidade do servidor e contém informações como:
 
-500 - Erro no servidor; 
+- Nome do domínio.
+- Chave pública.
+- Autoridade certificadora responsável.
+- Período de validade.
 
+### HTTP x HTTPS
 
-Ex: 
+| HTTP | HTTPS |
+|---|---|
+| Sem criptografia própria | Comunicação protegida por TLS |
+| Geralmente utiliza a porta 80 | Geralmente utiliza a porta 443 |
+| Dados não são protegidos por criptografia do próprio HTTP | Dados são criptografados durante a transmissão |
 
-Eu faço login;
+## Importância do HTTPS
 
-Navegador: POST - /login (senha, usuário)
+- Protege informações transmitidas.
+- Dificulta a leitura dos dados por terceiros.
+- Ajuda a verificar a identidade do servidor.
+- É essencial para operações como logins e pagamentos.
 
-Servidor: Verifica o banco de dados,     se estiver certo: 200 ou 201;     se não estiver certo: 401;
-
-
-Onde ver isso: Abra qualquer site, pressione F12, vá em Network, Você vera diversas requisições sendo feitas em tempo real; 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-HTTPs(HyperText Transfer Protocol Secure) - A sua diferença para o HTTP, é que tudo é criptografado.
-
-Ex:
-
-Senha: 12345
-
-com o HTTP: 12345
-com o HTTPs: uw#gfy%ewuu273@
-
-Todo o conteúdo fica embaralhado, fazendo com que terceiros não entendam os dados.
-
-HTTPs = HTTP + SSL/TLS(hoje em dia se usa mais o TLS)
-
-Certificado SSL/TLS - ele indica quem é o dono do site, pra qual domínio ele vale, dono do certificado e etc.
-
-Como funciona quando abrir o site HTTPs:  
-
-Chrome -> Servidor -> "Você realmente é o Google" -> O servidor manda o certificado -> Chrome verifica -> Tudo Certo -> Cria um conexão criptografada(para proteger os dados) -> e agora vem o HTTP
-| essa etapa é chamada de handshake TLS
-
+> **Resumo:** HTTP permite a comunicação entre navegador e servidor. HTTPS utiliza HTTP protegido por TLS, oferecendo mais segurança durante a transmissão dos dados.
